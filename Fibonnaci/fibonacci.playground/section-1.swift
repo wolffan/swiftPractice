@@ -10,20 +10,23 @@ func getNext (first : Int, second: Int) -> Int {
     return first + second
 }
 
-func fibonnaci(first : Int, second: Int, firstX: Int) -> Int {
+var first = 0
+var second = 1
+
+func fibonnaciEvenSum(firstX: Int) -> Int {
     
     var evenSum = 0
+    var index = 0
     
-    println(getNext(first,second))
-    
-    if firstX == 0 {
-        return first + second
-    }
-    else {
-        evenSum += fibonnaci(second, first+second, firstX-1)
+    while index < firstX {
+        if (index % 2) == 0 { evenSum += index }
+        
+        index = first + second
+        first = second
+        second = index
     }
     
     return evenSum
 }
 
-fibonnaci(1, 2, 0)
+println(fibonnaciEvenSum(4000000))
