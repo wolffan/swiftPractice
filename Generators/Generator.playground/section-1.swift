@@ -30,3 +30,14 @@ while limit < 4000000 {
     limit = f.next()!
     println(limit)
 }
+
+// Sequences
+
+protocol Sequence : _Sequence_Type {
+    typealias Generator : Generator
+    func generate() -> Generator
+}
+
+struct fibonSequence : Secuence {
+    <#properties and methods#>
+}
